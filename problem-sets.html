@@ -6,23 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Problem Sets for Teaching Data Analysis | Tal Gross</title>
   <meta name="description" content="Problem sets that replicate published health economics results and teach quasi-experimental methods.">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Problem Sets for Teaching Data Analysis | Tal Gross">
+  <meta property="og:description" content="Problem sets that replicate published health economics results and teach quasi-experimental methods.">
+  <meta property="og:url" content="https://talgross.com/problem-sets.html">
+  <meta property="og:image" content="https://talgross.com/images/tal-gross.jpeg">
+  <meta name="twitter:card" content="summary">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="masthead">
-  <a href="./">Tal Gross</a>
-</header>
-
 <main>
+
+<p class="home-link"><a href="./">&larr; Tal Gross home page</a></p>
 
 <h1>Problem Sets for Teaching Data Analysis</h1>
 
-<p>The following problems replicate published results and teach students quasi-experimental methods. The problems are appropriate for advanced undergraduates or graduate students learning statistical programming. Instructors can e-mail <a href="./">Tal Gross</a> for solutions.</p>
+<p>The following problems replicate published results and teach students quasi-experimental methods. The problems are appropriate for advanced undergraduates or graduate students learning statistical programming. Instructors can e-mail <a href="mailto:talgross@bu.edu">Tal Gross</a> for solutions.</p>
 
 <h2>Regression-discontinuity designs</h2>
 
-<p>The following replicates the regression-discontinuity design explored by <a href="http://www.mitpressjournals.org/doi/abs/10.1162/REST_a_00378#.U2fmUK1dVqI">Anderson, Dobkin, and Gross (2014)</a>.</p>
+<p>The following replicates the regression-discontinuity design explored by <a href="https://doi.org/10.1162/rest_a_00378">Anderson, Dobkin, and Gross (2014)</a>.</p>
 
 <ol>
   <li>Import into your preferred statistics package two files: an <a href="teaching/P10_Inpatient_CSV_File.csv.zip">inpatient file</a> and an <a href="teaching/P03_ED_Analysis_File.csv.zip">emergency department file</a>. Those files contain counts of visits to the hospital by age.</li>
@@ -33,17 +38,15 @@
 
 <h2>Difference-in-differences regressions</h2>
 
-<p>The following replicates some of the difference-in-difference regressions explored by <a href="http://jhr.uwpress.org/content/49/2/424.abstract">Gross and Tobacman (2014)</a>. To preserve confidentiality, the authors could only release aggregate counts, but the data are sufficient to approximately replicate the main results of the paper.</p>
+<p>The following replicates some of the difference-in-difference regressions explored by <a href="https://doi.org/10.3368/jhr.49.2.424">Gross and Tobacman (2014)</a>. To preserve confidentiality, the authors could only release aggregate counts, but the data are sufficient to approximately replicate the main results of the paper.</p>
 
 <ol>
   <li>Import into your preferred statistics package a <a href="teaching/simplified-gross-tobacman-ed-data.csv.zip">file</a> with emergency-department visits. The data is composed of group-week observations: the variable <code>paper_date_2008</code> indicates each group by the date in which it received its paper check in 2008. The variables <code>start_of_week</code> and <code>end_of_week</code> indicate the dates when the visits underlying the observation occurred.</li>
-  <li>Run difference-in-difference regressions for three outcomes: adult male ED visits, adulte female ED visits, and alcohol- and drug-related visits. The regressions should have a fixed effect for each paper-check date, a fixed effect for each week, and the logarithm of the visit count as the outcome of interest.</li>
+  <li>Run difference-in-difference regressions for three outcomes: adult male ED visits, adult female ED visits, and alcohol- and drug-related visits. The regressions should have a fixed effect for each paper-check date, a fixed effect for each week, and the logarithm of the visit count as the outcome of interest.</li>
   <li>Create the associated event-study figures. These figures are tricky to create, but nearly all papers that rely on standard difference-in-difference designs include figures such as these.</li>
 </ol>
 
 </main>
-
-<footer>Tal Gross &middot; Questrom School of Business &middot; Boston University</footer>
 
 </body>
 </html>
