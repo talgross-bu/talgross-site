@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- Problem sets for teaching data analysis, with links to the data files in teaching/. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Problem Sets for Teaching Data Analysis | Tal Gross</title>
+  <meta name="description" content="Problem sets that replicate published health economics results and teach quasi-experimental methods.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <a href="./">Tal Gross</a>
+</header>
+
+<main>
+
+<h1>Problem Sets for Teaching Data Analysis</h1>
+
+<p>The following problems replicate published results and teach students quasi-experimental methods. The problems are appropriate for advanced undergraduates or graduate students learning statistical programming. Instructors can e-mail <a href="./">Tal Gross</a> for solutions.</p>
+
+<h2>Regression-discontinuity designs</h2>
+
+<p>The following replicates the regression-discontinuity design explored by <a href="http://www.mitpressjournals.org/doi/abs/10.1162/REST_a_00378#.U2fmUK1dVqI">Anderson, Dobkin, and Gross (2014)</a>.</p>
+
+<ol>
+  <li>Import into your preferred statistics package two files: an <a href="teaching/P10_Inpatient_CSV_File.csv.zip">inpatient file</a> and an <a href="teaching/P03_ED_Analysis_File.csv.zip">emergency department file</a>. Those files contain counts of visits to the hospital by age.</li>
+  <li>Re-create the five graphs in Figure 1 of the paper. The figures should include the data points in the scatterplot, as well as the two regression lines. The regression model is a spline model with a discontinuous jump right after age 23. The key variable is “age in months.” You therefore want to focus on a linear spline OLS regression model which includes three right-hand side variables: an indicator variable for whether the individual is age 23 or above, the age in months (to capture the linear trend), and an additional variable that captures effect of age in months after age 23.</li>
+  <li>The OLS regression results that are used to generate the lines in Figure 1 do <em>not</em> match the coefficients in Table 1. Describe intuitively why these estimates are not the same.</li>
+  <li>Next, reproduce all of the results in Table 2. You should be able to reproduce these results exactly. The table in the paper only includes point estimates and standard errors. You should also include <em>p</em>-values underneath the standard errors for each “cell” in the table. (Note that all of the dependent variables in Table 2 have been transformed by taking natural logs; you need to do that in order to match the results exactly.)</li>
+</ol>
+
+<h2>Difference-in-differences regressions</h2>
+
+<p>The following replicates some of the difference-in-difference regressions explored by <a href="http://jhr.uwpress.org/content/49/2/424.abstract">Gross and Tobacman (2014)</a>. To preserve confidentiality, the authors could only release aggregate counts, but the data are sufficient to approximately replicate the main results of the paper.</p>
+
+<ol>
+  <li>Import into your preferred statistics package a <a href="teaching/simplified-gross-tobacman-ed-data.csv.zip">file</a> with emergency-department visits. The data is composed of group-week observations: the variable <code>paper_date_2008</code> indicates each group by the date in which it received its paper check in 2008. The variables <code>start_of_week</code> and <code>end_of_week</code> indicate the dates when the visits underlying the observation occurred.</li>
+  <li>Run difference-in-difference regressions for three outcomes: adult male ED visits, adulte female ED visits, and alcohol- and drug-related visits. The regressions should have a fixed effect for each paper-check date, a fixed effect for each week, and the logarithm of the visit count as the outcome of interest.</li>
+  <li>Create the associated event-study figures. These figures are tricky to create, but nearly all papers that rely on standard difference-in-difference designs include figures such as these.</li>
+</ol>
+
+</main>
+
+<footer>Tal Gross &middot; Questrom School of Business &middot; Boston University</footer>
+
+</body>
+</html>
